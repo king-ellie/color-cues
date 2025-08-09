@@ -13,7 +13,7 @@ interface ConfigFormProps {
 const ConfigForm: React.FC<ConfigFormProps> = ({ onStart }) => {
   const [interval, setInterval] = useState(5);
   const [transition, setTransition] = useState<'fade' | 'instant'>('fade');
-  const [currentColor, setCurrentColor] = useState('#ffffff');
+  const [currentColor, setCurrentColor] = useState('#D30000');
   const [colors, setColors] = useState<string[]>([]);
   const [randomize, setRandomize] = useState(false);
 

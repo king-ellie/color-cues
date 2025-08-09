@@ -1,6 +1,6 @@
-# Color Wheel App
+# Color Cues
 
-The Color Wheel App is a frontend-only web application built with React, TypeScript, and Vite. It allows users to configure and display a rotating background of colors with customizable settings.
+Color Cues is a frontend-only web application built with React, TypeScript, and Vite. It allows users to configure and display a rotating background of colors with customizable settings.
 
 ## Features
 

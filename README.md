@@ -1,69 +1,61 @@
-# React + TypeScript + Vite
+# Color Wheel App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Color Wheel App is a frontend-only web application built with React, TypeScript, and Vite. It allows users to configure and display a rotating background of colors with customizable settings.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Color Configuration**:
 
-## Expanding the ESLint configuration
+  - Select 2–8 colors for the rotation.
+  - Use a color picker to choose colors dynamically.
+  - Preview the selected color as the background while configuring.
+  - Option to randomize the order of colors or use the selected order.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Animation Settings**:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  - Set the time interval (in minutes) between color transitions.
+  - Choose between gradual fade or instant switch transitions.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Animation View**:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  - Full-screen background animation with the selected colors.
+  - Pause/Resume functionality.
+  - Return to the configuration form at any time.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Persistence**:
+  - Settings are saved in `localStorage` and restored on reload.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Technologies Used
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React**: For building the user interface.
+- **TypeScript**: For type safety and better developer experience.
+- **Vite**: For fast development and build tooling.
+- **react-colorful**: For the color picker component.
+
+## Setup Instructions
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd color-wheel
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open the app in your browser:
+   - Navigate to [http://localhost:5173](http://localhost:5173).
+
+## License
+
+This project is licensed under the MIT License.

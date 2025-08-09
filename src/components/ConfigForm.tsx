@@ -17,6 +17,13 @@ const ConfigForm: React.FC<ConfigFormProps> = ({ onStart }) => {
   const [colors, setColors] = useState<string[]>([]);
 
   useEffect(() => {
+    document.body.style.backgroundColor = currentColor;
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, [currentColor]);
+
+  useEffect(() => {
     const savedSettings = localStorage.getItem('colorWheelSettings');
     if (savedSettings) {
       const { interval, transition, colors } = JSON.parse(savedSettings);

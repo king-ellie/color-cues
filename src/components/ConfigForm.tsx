@@ -15,6 +15,7 @@ const ConfigForm: React.FC<ConfigFormProps> = ({ onStart }) => {
   const [transition, setTransition] = useState<'fade' | 'instant'>('fade');
   const [currentColor, setCurrentColor] = useState('#ffffff');
   const [colors, setColors] = useState<string[]>([]);
+  const [randomize, setRandomize] = useState(false);
 
   useEffect(() => {
     document.body.style.backgroundColor = currentColor;
@@ -45,7 +46,8 @@ const ConfigForm: React.FC<ConfigFormProps> = ({ onStart }) => {
 
   const handleStart = () => {
     if (colors.length >= 2) {
-      const settings = { interval, transition, colors };
+      const finalColors = randomize ? [...colors].sort(() => Math.random() - 0.5) : colors;
+      const settings = { interval, transition, colors: finalColors };
       localStorage.setItem('colorWheelSettings', JSON.stringify(settings));
       onStart(settings);
     } else {
@@ -92,6 +94,14 @@ const ConfigForm: React.FC<ConfigFormProps> = ({ onStart }) => {
           />
         ))}
       </div>
+      <label>
+        Randomize color order:
+        <input
+          type="checkbox"
+          checked={randomize}
+          onChange={(e) => setRandomize(e.target.checked)}
+        />
+      </label>
       <button onClick={handleStart}>Play</button>
     </div>
   );

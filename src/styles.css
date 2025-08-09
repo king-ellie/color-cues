@@ -1,0 +1,43 @@
+/* Add your styles here */
+
+/* Example styles for components */
+.config-form {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.color-picker {
+  margin: 10px 0;
+}
+
+.color-list {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.color-item {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.color-display {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-tray {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}

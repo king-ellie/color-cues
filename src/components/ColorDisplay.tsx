@@ -18,7 +18,14 @@ const ColorDisplay: React.FC<ColorDisplayProps> = ({ settings, onReturn }) => {
   return (
     <div
       className="color-display"
-      style={{ backgroundColor: currentColor }}
+      style={{
+        backgroundColor: currentColor,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+      }}
     >
       <ControlTray
         isPaused={isPaused}
